@@ -1,0 +1,6 @@
+docker/.docker
+
+script/python/output.log
+script/python/venv
+script/python/__pycache__
+script/python/config/__pycache__

@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  conceito-enade-2019-db:
+    container_name: conceito_enade_2019_db
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'conceito_enade_2019'
+      MYSQL_USER: 'mysql'
+      MYSQL_PASSWORD: 'mysql'
+      MYSQL_ROOT_PASSWORD: 'mysql'
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./.docker/data:/var/lib/mysql
+      - ./.docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - conceito-enade-2019-network
+networks:
+  conceito-enade-2019-network:
+    driver: bridge
