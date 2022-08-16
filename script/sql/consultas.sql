@@ -11,8 +11,7 @@ FROM
     JOIN ies USING (cod_ies)
     JOIN area_avaliacao AS aa USING (cod_area_avaliacao)
 WHERE
-    aa.nome = 'ENGENHARIA ELÉTRICA' AND
-    m.sigla_uf = 'RS'
+    aa.nome = 'ENGENHARIA ELÉTRICA' AND m.sigla_uf = 'RS'
 ORDER BY nota_componente_especifico DESC;
 
 -- Ranking das médias do conceito enade por universidade pública
@@ -25,7 +24,6 @@ SELECT
 FROM
     conceito_enade AS ce NATURAL JOIN curso AS c NATURAL JOIN ies
 WHERE
-    ies.org_acad = "Universidade" AND
-    ies.categ_adm LIKE "Pública%"
+    ies.org_acad = "Universidade" AND ies.categ_adm LIKE "Pública%"
 GROUP BY ies.cod_ies
 ORDER BY media_conceito_enade DESC;
