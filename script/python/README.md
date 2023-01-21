@@ -10,7 +10,7 @@ python -m venv venv
 source venv/bin/activate
 
 # acessa o ambiente virtual (windows)
-.\venv\Scripts/activate
+.\venv\Scripts\activate
 
 # atualiza o gerenciador de pacotes do python
 python -m pip install --upgrade pip
